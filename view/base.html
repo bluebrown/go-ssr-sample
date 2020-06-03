@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="h-screen" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{{.DocTitle}}</title>
+    <link
+      rel="stylesheet"
+      href="/assets/tailwind.css"
+    />
+  </head>
+
+  <body class="max-w-sreen overflow-hidden h-full" aria-label="Mongo Admin">
+    <div class="flex h-full">
+      <!-- sidebar -->
+      {{ template "sidebar" .Sidebar }}
+      <section class="bg-gray-200 flex-1 flex-col min-h-0 overflow-y-auto overflow-hidden">
+        <!-- top bar -->
+        {{ template "topbar" . }}
+        <!-- main section -->
+        <main id="main" class="flex-1 flex py-12 px-24 -mx-6">
+          <!-- main content -->
+          <section class="flex-1 mx-6 min-w-0 min-h-0">
+            <!-- content header -->
+            <header class="flex mb-4">
+              <div class="flex">
+                {{ block "main-header-caption" . }}
+                <h1 class="text-xl font-semibold">{{.PageTitle}}</h1>
+                {{ end }}
+            </div>
+            <div class="flex flex-1 justify-end">
+              {{ block "main-header-end" . }}
+              {{ end }}
+            </div>
+            </header>
+            <!-- content -->
+            {{ block "main" . }}
+                  {{ template "article" . }}
+              {{ end }}
+          </section>
+          <!-- main side -->
+          <aside class="mx-6 w-64">
+            {{ block "aside" . }}
+              {{range $article := .Aside}}
+                {{ template "article" $article }}
+              {{ end }}
+            {{ end }}
+          </aside>
+        </main>
+      </section>
+    </div>
+  </body>
+</html>

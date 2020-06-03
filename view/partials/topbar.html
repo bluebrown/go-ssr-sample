@@ -1,0 +1,26 @@
+{{ define "topbar" }}
+<div class="h-20 border-b flex bg-white items-center p-6">
+  <div class="w-16"></div>
+  <div class="flex flex-1 bg-gray-200 p-1 mx-3 group">
+    <div class="flex items-center justify-center p-1">
+      <svg
+        class="fill-current w-4 h-4 mx-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M21.172 24l-7.387-7.387c-1.388.874-3.024 1.387-4.785 1.387-4.971 0-9-4.029-9-9s4.029-9 9-9 9 4.029 9 9c0 1.761-.514 3.398-1.387 4.785l7.387 7.387-2.828 2.828zm-12.172-8c3.859 0 7-3.14 7-7s-3.141-7-7-7-7 3.14-7 7 3.141 7 7 7z"
+        />
+      </svg>
+    </div>
+    <input
+      class="bg-transparent border-dotted border-2 outline-none border-opacity-0 hover:border-opacity-50 focus:border-opacity-100 flex-1 p-1"
+      type="text"
+      placeholder="search here"
+    />
+  </div>
+  <div class="w-16"></div>
+</div>
+{{ end }}
